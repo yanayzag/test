@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>תרגיל מודעות לפישינג · ExperTeam</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root{
+      --purple:#6E3FA3; --purple-deep:#542C7E;   /* ExperTeam primary */
+      --pink:#D6218A; --pink-soft:#fdeef7;
+      --green:#4C9A2A; --green-br:#84C447;
+      --blue:#0098D4; --sky:#5EBCE0;
+      --ink:#2a2140; --muted:#6b6480;
+      --bg:#f4f1f8; --card:#ffffff; --line:#e9e3f1;
+    }
+    *{box-sizing:border-box}
+    body{font-family:-apple-system,"Segoe UI",Rubik,Arial,sans-serif;direction:rtl;
+      margin:0;background:var(--bg);color:var(--ink);line-height:1.7;}
+    .wrap{max-width:760px;margin:0 auto;padding:16px;}
+    .brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px;
+      background:var(--card);border:1px solid var(--line);border-radius:14px;
+      padding:14px 20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(84,44,126,.05);}
+    .brandbar img{height:38px;width:auto;}
+    .brandbar span{color:var(--purple);font-weight:700;font-size:15px;}
+    .hero{background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;border-radius:18px;
+      padding:30px 28px;text-align:center;box-shadow:0 12px 34px rgba(110,63,163,.3);}
+    .hero img.kimi{width:190px;height:auto;filter:drop-shadow(0 8px 16px rgba(0,0,0,.25));margin-bottom:6px;}
+    .hero h1{margin:6px 0 10px;font-size:28px;}
+    .hero p{margin:0;font-size:18px;opacity:.96;}
+    .safe{display:inline-block;margin-top:16px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);
+      padding:8px 16px;border-radius:999px;font-size:14px;}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:18px 0;
+      box-shadow:0 4px 14px rgba(84,44,126,.05);}
+    h2{color:var(--purple);font-size:21px;margin:0 0 12px;}
+    .flags{counter-reset:flag;}
+    .flag{border-right:4px solid var(--pink);background:var(--pink-soft);border-radius:10px;padding:14px 18px;margin:14px 0;}
+    .flag h3{margin:0 0 6px;color:var(--pink);font-size:17px;}
+    .flag h3::before{counter-increment:flag;content:"🚩 דגל " counter(flag) " · ";}
+    code,.url{background:#2a1640;color:#e9b6ff;padding:3px 8px;border-radius:6px;font-size:14px;word-break:break-all;direction:ltr;display:inline-block;}
+    ul{margin:8px 0;padding-inline-start:22px;} li{margin:7px 0;}
+    .ms{background:#eaf5fb;border:1px solid #c7e4f3;border-radius:12px;padding:14px 18px;margin-top:12px;}
+    .small-co{background:linear-gradient(135deg,#fff,#f6f0fb);border:1px solid #e9ddf3;}
+    .kimi-note{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+    .kimi-note img{width:120px;border-radius:12px;}
+    .checklist li{list-style:none;position:relative;padding-inline-start:30px;}
+    .checklist li::before{content:"✅";position:absolute;inset-inline-start:0;}
+    footer{text-align:center;color:var(--muted);font-size:13px;padding:24px 0 36px;}
+    footer img{height:34px;vertical-align:middle;margin-top:8px;display:block;margin-inline:auto;}
+    .meta{font-size:13px;color:var(--muted);margin-top:6px;}
+    b.hot{color:var(--pink);}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brandbar">
+    <img src="assets/experteam-logo.png" alt="ExperTeam">
+    <span>מודעות לאבטחת מידע</span>
+  </div>
+
+  <div class="hero">
+    <img class="kimi" src="assets/kimi-fishing.webp" alt="קימי דגה דג">
+    <h1>נדוגת! 🎣 זה היה תרגיל פישינג</h1>
+    <p>המייל על "מדיניות הכלבים" לא היה אמיתי — קימי שלחה אותו כתרגיל מודעות.</p>
+    <span class="safe">🛡️ אל דאגה: לא קרה שום דבר. לא נלקח מידע, שום דבר לא הותקן.</span>
+  </div>
+
+  <div class="card">
+    <p style="font-size:17px;margin-top:0">
+      לחצת על הלינק במייל — ובמתקפה אמיתית, הלחיצה הזו הייתה יכולה לגנוב את
+      הסיסמה שלך או להדביק את המחשב. הפעם זו הייתה רק קימי. בוא נלמד לזהות את
+      זה בפעם הבאה. 👇
+    </p>
+  </div>
+
+  <div class="card flags">
+    <h2>🔍 4 הדגלים האדומים שהיו במייל הזה</h2>
+
+    <div class="flag">
+      <h3>זמן השליחה</h3>
+      <p>תוקפים שולחים הרבה פעמים בשעות מוזרות (לילה / סופ"ש). <b>עצור ושאל:</b>
+      הגיוני שההודעה הזו נשלחה דווקא עכשיו?</p>
+      <p class="meta">אתה לחצת על הלינק הזה כעת: <b id="now"></b></p>
+    </div>
+
+    <div class="flag">
+      <h3>יצירת תחושת דחיפות</h3>
+      <p>"המקומות אוזלים", "אשר <b>עד יום חמישי</b>", "נותרו מעט מקומות" —
+      לחץ של זמן נועד לגרום לך ללחוץ <b>לפני</b> שאתה עוצר לחשוב. כמעט כל
+      מתקפת פישינג משתמשת בזה. <b class="hot">דחיפות = דגל אדום.</b></p>
+    </div>
+
+    <div class="flag">
+      <h3>ה-URL החשוד</h3>
+      <p>הלינק <b>לא</b> הוביל לכתובת של ExperTeam. ככה הוא נראה באמת:</p>
+      <p><span class="url" id="url">…</span></p>
+      <p>תמיד רחף מעל לינק <b>לפני</b> שאתה לוחץ ובדוק לאן הוא באמת מוביל.
+      כתובת שאינה הדומיין הרשמי שלנו = דגל אדום.</p>
+    </div>
+
+    <div class="flag">
+      <h3>סממנים של AI</h3>
+      <p>היום תוקפים מייצרים מיילים ותמונות ב-AI. סימנים שכדאי לחשוד בהם:</p>
+      <ul>
+        <li>ניסוח "חלק" מדי, כללי, או טון שלא מתאים לשולח שאתה מכיר</li>
+        <li>תמונות שנראות "מרונדרות" / מושלמות מדי (כמו קימי 😉) או עם פרטים מעוותים</li>
+        <li>פנייה גנרית, בלי הקשר אמיתי לעבודה שלך</li>
+        <li>בקשה ללחוץ, להתחבר, או לאשר משהו</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ למה זה קריטי דווקא עכשיו</h2>
+    <p>מאז שה-AI נכנס לתמונה, <b>כמות מתקפות הפישינג זינקה</b> — הן נכתבות
+    מהר יותר, אמינות יותר, ובהתאמה אישית. מה שפעם היה מלא שגיאות כתיב,
+    היום נראה מושלם.</p>
+    <div class="ms">
+      <b>🛡️ המסנן של Microsoft שלנו עובד מסביב לשעון</b> וחוסם את רוב
+      המתקפות עוד לפני שהן מגיעות אליך. אבל — אי אפשר לדעת מתי מתקפה אחת
+      תצליח לחדור את השרת, או מתי היא תגיע דווקא ל<b>מייל האישי</b> של אחד
+      העובדים, שם אין לנו שום הגנה. שם, אתה המסנן.
+    </div>
+  </div>
+
+  <div class="card small-co">
+    <h2>👥 אנחנו קטנים — וזו בדיוק הסיבה</h2>
+    <div class="kimi-note">
+      <img src="assets/kimi-dog.webp" alt="קימי">
+      <p style="flex:1;min-width:220px;margin:0">
+        אנחנו חברה של <b>40 עובדים</b>. אין לנו מחלקת משאבי אנוש, ואין לנו
+        צוות אבטחת מידע. אין "מישהו אחר" שיתפוס את זה בשבילנו.<br>
+        <b>כל אחד מאיתנו הוא קו ההגנה של החברה.</b> לחיצה אחת לא זהירה של
+        עובד אחד יכולה לחשוף את כולנו.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>✅ מה עושים בפעם הבאה</h2>
+    <ul class="checklist">
+      <li>בדוק את כתובת השולח המלאה — לא רק את השם המוצג</li>
+      <li>רחף מעל כל לינק ובדוק את ה-URL האמיתי לפני לחיצה</li>
+      <li>חשוד בדחיפות, בסקרנות ובבקשות "אשר/התחבר/שלם"</li>
+      <li>לא בטוח? אל תלחץ. שאל את קימי / פנה למנכ"ל ישירות</li>
+    </ul>
+    <p style="margin-bottom:0">תודה שעזרת להפוך את ExperTeam לבטוחה יותר 🙏
+    המטרה היא ללמוד, לא להפליל — אף אחד לא "נתפס".</p>
+  </div>
+
+  <footer>
+    תרגיל מודעות לאבטחת מידע
+    <img src="assets/experteam-logo.png" alt="ExperTeam">
+  </footer>
+</div>
+
+<script>
+  // Client-side only — no data is sent anywhere by this script.
+  document.getElementById('now').textContent = new Date().toLocaleString('he-IL');
+  document.getElementById('url').textContent = window.location.href;
+</script>
+</body>
+</html>
