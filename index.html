@@ -7,58 +7,60 @@
   <meta name="robots" content="noindex">
   <style>
     :root{
-      --brand:#0E4C92;      /* ExperTeam deep blue */
-      --brand2:#2EA7E6;     /* Kimi sky blue */
-      --purple:#6C4CE0;     /* Kimi purple */
-      --alert:#E8552D;      /* phishing warning */
-      --ink:#1b2733; --muted:#5d6b7a;
-      --bg:#eef3f8; --card:#ffffff; --line:#e4ebf2;
+      --purple:#6E3FA3; --purple-deep:#542C7E;   /* ExperTeam primary */
+      --pink:#D6218A; --pink-soft:#fdeef7;
+      --green:#4C9A2A; --green-br:#84C447;
+      --blue:#0098D4; --sky:#5EBCE0;
+      --ink:#2a2140; --muted:#6b6480;
+      --bg:#f4f1f8; --card:#ffffff; --line:#e9e3f1;
     }
     *{box-sizing:border-box}
     body{font-family:-apple-system,"Segoe UI",Rubik,Arial,sans-serif;direction:rtl;
       margin:0;background:var(--bg);color:var(--ink);line-height:1.7;}
     .wrap{max-width:760px;margin:0 auto;padding:16px;}
-    .brandbar{display:flex;align-items:center;gap:10px;padding:14px 4px;color:var(--brand);font-weight:800;font-size:20px;letter-spacing:.3px;}
-    .brandbar .dot{width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--brand2),var(--purple));}
-    .hero{background:linear-gradient(135deg,var(--brand),var(--purple));color:#fff;border-radius:18px;
-      padding:30px 28px;text-align:center;box-shadow:0 12px 34px rgba(14,76,146,.25);position:relative;overflow:hidden;}
-    .hero img{width:190px;height:auto;filter:drop-shadow(0 8px 16px rgba(0,0,0,.25));margin-bottom:6px;}
+    .brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px;
+      background:var(--card);border:1px solid var(--line);border-radius:14px;
+      padding:14px 20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(84,44,126,.05);}
+    .brandbar img{height:38px;width:auto;}
+    .brandbar span{color:var(--purple);font-weight:700;font-size:15px;}
+    .hero{background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;border-radius:18px;
+      padding:30px 28px;text-align:center;box-shadow:0 12px 34px rgba(110,63,163,.3);}
+    .hero img.kimi{width:190px;height:auto;filter:drop-shadow(0 8px 16px rgba(0,0,0,.25));margin-bottom:6px;}
     .hero h1{margin:6px 0 10px;font-size:28px;}
-    .hero p{margin:0;font-size:18px;opacity:.95;}
-    .safe{display:inline-block;margin-top:16px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+    .hero p{margin:0;font-size:18px;opacity:.96;}
+    .safe{display:inline-block;margin-top:16px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);
       padding:8px 16px;border-radius:999px;font-size:14px;}
     .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:18px 0;
-      box-shadow:0 4px 14px rgba(0,0,0,.04);}
-    h2{color:var(--brand);font-size:21px;margin:0 0 12px;display:flex;align-items:center;gap:8px;}
+      box-shadow:0 4px 14px rgba(84,44,126,.05);}
+    h2{color:var(--purple);font-size:21px;margin:0 0 12px;}
     .flags{counter-reset:flag;}
-    .flag{border-right:4px solid var(--alert);background:#fff6f3;border-radius:10px;padding:14px 18px;margin:14px 0;}
-    .flag h3{margin:0 0 6px;color:var(--alert);font-size:17px;}
+    .flag{border-right:4px solid var(--pink);background:var(--pink-soft);border-radius:10px;padding:14px 18px;margin:14px 0;}
+    .flag h3{margin:0 0 6px;color:var(--pink);font-size:17px;}
     .flag h3::before{counter-increment:flag;content:"🚩 דגל " counter(flag) " · ";}
-    code,.url{background:#0f1b2a;color:#7ee0ff;padding:3px 8px;border-radius:6px;font-size:14px;word-break:break-all;direction:ltr;display:inline-block;}
-    ul{margin:8px 0;padding-inline-start:22px;}
-    li{margin:7px 0;}
-    .stat{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;}
-    .stat div{flex:1;min-width:150px;background:linear-gradient(135deg,#f3f7fc,#eaf3fb);border:1px solid var(--line);
-      border-radius:12px;padding:14px 16px;text-align:center;}
-    .stat b{display:block;font-size:26px;color:var(--brand);}
-    .ms{background:#f4f8fd;border:1px solid #d7e6f5;border-radius:12px;padding:14px 18px;margin-top:12px;}
-    .small-co{background:linear-gradient(135deg,#fff,#f6f2ff);border:1px solid #e6def9;}
+    code,.url{background:#2a1640;color:#e9b6ff;padding:3px 8px;border-radius:6px;font-size:14px;word-break:break-all;direction:ltr;display:inline-block;}
+    ul{margin:8px 0;padding-inline-start:22px;} li{margin:7px 0;}
+    .ms{background:#eaf5fb;border:1px solid #c7e4f3;border-radius:12px;padding:14px 18px;margin-top:12px;}
+    .small-co{background:linear-gradient(135deg,#fff,#f6f0fb);border:1px solid #e9ddf3;}
     .kimi-note{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
     .kimi-note img{width:120px;border-radius:12px;}
     .checklist li{list-style:none;position:relative;padding-inline-start:30px;}
     .checklist li::before{content:"✅";position:absolute;inset-inline-start:0;}
     footer{text-align:center;color:var(--muted);font-size:13px;padding:24px 0 36px;}
-    footer .kimi{width:70px;vertical-align:middle;margin-inline-start:8px;}
+    footer img{height:34px;vertical-align:middle;margin-top:8px;display:block;margin-inline:auto;}
     .meta{font-size:13px;color:var(--muted);margin-top:6px;}
+    b.hot{color:var(--pink);}
   </style>
 </head>
 <body>
 <div class="wrap">
 
-  <div class="brandbar"><span class="dot"></span>ExperTeam · מודעות לאבטחת מידע</div>
+  <div class="brandbar">
+    <img src="assets/experteam-logo.png" alt="ExperTeam">
+    <span>מודעות לאבטחת מידע</span>
+  </div>
 
   <div class="hero">
-    <img src="assets/kimi-fishing.webp" alt="קימי דגה דג">
+    <img class="kimi" src="assets/kimi-fishing.webp" alt="קימי דגה דג">
     <h1>נדוגת! 🎣 זה היה תרגיל פישינג</h1>
     <p>המייל על "מדיניות הכלבים" לא היה אמיתי — קימי שלחה אותו כתרגיל מודעות.</p>
     <span class="safe">🛡️ אל דאגה: לא קרה שום דבר. לא נלקח מידע, שום דבר לא הותקן.</span>
@@ -73,14 +75,20 @@
   </div>
 
   <div class="card flags">
-    <h2>🔍 3 הדגלים האדומים שהיו במייל הזה</h2>
+    <h2>🔍 4 הדגלים האדומים שהיו במייל הזה</h2>
 
     <div class="flag">
       <h3>זמן השליחה</h3>
-      <p>תוקפים שולחים הרבה פעמים בשעות מוזרות (לילה / סופ"ש) או יוצרים לחץ
-      של זמן — "אשר עד יום חמישי, מקומות מוגבלים". <b>עצור ושאל:</b> הגיוני
-      שההודעה הזו תישלח עכשיו, ובדחיפות הזו?</p>
+      <p>תוקפים שולחים הרבה פעמים בשעות מוזרות (לילה / סופ"ש). <b>עצור ושאל:</b>
+      הגיוני שההודעה הזו נשלחה דווקא עכשיו?</p>
       <p class="meta">אתה לחצת על הלינק הזה כעת: <b id="now"></b></p>
+    </div>
+
+    <div class="flag">
+      <h3>יצירת תחושת דחיפות</h3>
+      <p>"המקומות אוזלים", "אשר <b>עד יום חמישי</b>", "נותרו מעט מקומות" —
+      לחץ של זמן נועד לגרום לך ללחוץ <b>לפני</b> שאתה עוצר לחשוב. כמעט כל
+      מתקפת פישינג משתמשת בזה. <b class="hot">דחיפות = דגל אדום.</b></p>
     </div>
 
     <div class="flag">
@@ -98,7 +106,7 @@
         <li>ניסוח "חלק" מדי, כללי, או טון שלא מתאים לשולח שאתה מכיר</li>
         <li>תמונות שנראות "מרונדרות" / מושלמות מדי (כמו קימי 😉) או עם פרטים מעוותים</li>
         <li>פנייה גנרית, בלי הקשר אמיתי לעבודה שלך</li>
-        <li>דחיפות מלאכותית + בקשה ללחוץ, להתחבר, או לאשר משהו</li>
+        <li>בקשה ללחוץ, להתחבר, או לאשר משהו</li>
       </ul>
     </div>
   </div>
@@ -142,15 +150,14 @@
   </div>
 
   <footer>
-    תרגיל מודעות לאבטחת מידע · ExperTeam
-    <img class="kimi" src="assets/kimi-fishing.webp" alt="קימי">
+    תרגיל מודעות לאבטחת מידע
+    <img src="assets/experteam-logo.png" alt="ExperTeam">
   </footer>
 </div>
 
 <script>
-  // Client-side only — no data is sent anywhere.
-  document.getElementById('now').textContent =
-    new Date().toLocaleString('he-IL');
+  // Client-side only — no data is sent anywhere by this script.
+  document.getElementById('now').textContent = new Date().toLocaleString('he-IL');
   document.getElementById('url').textContent = window.location.href;
 </script>
 </body>
