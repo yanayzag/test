@@ -24,7 +24,7 @@
 **2. מונה GoatCounter** (פעם אחת):
    - היכנס ל-[goatcounter.com](https://www.goatcounter.com) → הירשם חינם → בחר קוד (למשל `experteam`).
    - תקבל לוח בקרה בכתובת `https://experteam.goatcounter.com`.
-   - ב-`index.html` החלף את `YOURCODE` בקוד שבחרת (שתי מופעים בשורת ה-GoatCounter).
+   - ב-`index.html` החלף את `YOURCODE` בקוד שבחרת (בשורת ה-GoatCounter, `data-goatcounter`).
 
 **3. שלח מה-Gmail שלך:**
    - פתח `https://yanayzag.github.io/test/email.html`, סמן הכול (Cmd+A), העתק, הדבק להודעה
